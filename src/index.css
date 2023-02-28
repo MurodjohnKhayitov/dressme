@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "AeonicProBold";
+  src: url("/src/fonts/._AeonikProTRIAL-Bold.otf") format('otf');
+}
+@font-face {
+  font-family: "AeonicProLight";
+  src: url("/src/fonts/._AeonikProTRIAL-Light.otf") format('otf');
+}
+@font-face {
+  font-family: "AeonicProRegular";
+  src: url("/src/fonts/._AeonikProTRIAL-Regular.otf") format('otf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button,
+:focus, 
+input,
+textarea,
+select {
+  outline: none;
+}
+
+
+/* .labelBtn::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background-color: rgb(75, 130, 250);
+} */
+
+/* .labelBtn::before:nth-child(2){
+  background-color: rgb(189, 250, 75);
+} */
+ /* label:nth-child(1){
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+}
+ label:nth-child(2){
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: green;
+} */
+
+.openFile{
+  position: relative;
+  left: -500px;  transition: .5s;
+}
+
+.closeFile{
+  position: relative;
+  left: 0px;
+  transition: .5s;
+}
