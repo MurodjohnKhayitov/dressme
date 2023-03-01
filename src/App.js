@@ -7,8 +7,8 @@ const App = () => {
     <div className="font-aeonicPro">
         <BrowserRouter>
             <Header />
-          <RouterList/>
-            <Footer />
+          {/* <RouterList/>
+            <Footer /> */}
         </BrowserRouter>
     </div>
   );
