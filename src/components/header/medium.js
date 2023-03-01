@@ -8,10 +8,12 @@ const MediumHeader = () => {
   const [toggle, setToggle] = useState(false);
   // const [changeGenderColor, setChangeGenderColor] = useState(false)
 
+
   const toggleHamburger = () => setHamburgerMenu((val) => !val);
 
   return (
-    <div className={`flex flex-col  border border-solid border-gray-900	`}>
+      <div className={`flex flex-col  border border-solid border-gray-900	`}>
+        <h1>test</h1>
       <div className="w-full ss:px-4 md:px-[130px]  border border-solid border-gray-900">
         {/* Starting Full Screen page section */}
         <div className="fullScreen w-full flex items-center justify-between  border border-solid border-gray-900">
