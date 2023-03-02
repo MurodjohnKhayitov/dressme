@@ -7,7 +7,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { next, category, arrowBottomFull, mouse, toBottom } from '../../assets/imgs'
 
 
-// import required modules
+// import required modules``
 export default function MainPageSliders() {
     SwiperCore.use([Navigation, Pagination, Autoplay]);
     const [clothesToggle, setClothesToggle] = useState(true)

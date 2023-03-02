@@ -49,8 +49,6 @@ export {default as businessBlack} from './business-black.svg'
 export {default as contact} from './contact.svg'
 export {default as helpBlack} from './help-black.svg'
 
-
-
 // -----Contact--------
 export {default as dashborad} from './Contact/dashboard.svg'
 export {default as locate} from './Contact/location.svg'
@@ -78,6 +76,4 @@ export {default as message} from './Contact/message.svg'
 export {default as privateCheck} from './Contact/konfidelnos.svg'
 export {default as homeTrend} from './Contact/home-trend-up.svg'
 export {default as pictureframa} from './Contact/picture-frame.svg'
-
-
 
