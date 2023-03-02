@@ -6,9 +6,29 @@ import "swiper/css/pagination";
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { next, category, arrowBottomFull, mouse, toBottom } from '../../assets/imgs'
 
-
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 // import required modules``
 export default function MainPageSliders() {
+    const responsive2 = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 6,
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 5,
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 3,
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 2,
+        },
+    };
     SwiperCore.use([Navigation, Pagination, Autoplay]);
     const [clothesToggle, setClothesToggle] = useState(true)
     const [carosuelData, setCarosuelData] = useState([
@@ -49,6 +69,38 @@ export default function MainPageSliders() {
     return (
         <div className='box-border flex flex-col border border-solid border-slate-900	'>
             <div className="max-w-[1440px]  h-fit px-[130px] border border-solid border-black-400">
+                <div className='w-full 	 border border-solid border-red-900	'>
+                    <Carousel
+                        responsive={responsive2}
+                        //   autoPlay={this.props.deviceType !== "mobile" ? true : false}
+                        autoPlay={true}
+                        autoPlaySpeed={3000}
+                        infinite={true}
+                        className='flex justify-between'
+                    >
+                        {
+                            carosuelData?.map(data => {
+                                return (
+                                    data.Category.map(data => {
+                                        return (
+                                            <SwiperSlide key={data.id} className='w-[19%] h-[260px] rounded'>
+                                                <div className='w-full h-[230px] bg-bgColor border border-solid	border-borderColorCard '>
+                                                    {data?.img ? <img src={data?.img} alt="student" /> : null}
+                                                </div>
+                                                <div className='h-12.5 flex items-center justify-start'>
+                                                    <p className='not-italic mt-3 font-medium text-xl leading-6 text-black'>{data?.type || "type"}
+                                                        <span className='not-italic font-normal text-base leading-4 text-gray-500'>({data?.count || "0"})</span></p>
+                                                </div>
+                                            </SwiperSlide>
+                                        )
+                                    })
+                                )
+                            })
+                        }
+
+                    </Carousel>
+                </div>
+
                 <div className='w-full 	 border border-solid border-red-900	'>
                     <Swiper
                         slidesPerView={7}
