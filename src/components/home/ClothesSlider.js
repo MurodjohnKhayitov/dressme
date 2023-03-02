@@ -8,6 +8,8 @@ import 'swiper/swiper-bundle.css';
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 export default function ClothesSlider() {
     SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -299,72 +301,108 @@ export default function ClothesSlider() {
         },
 
     ])
+    const responsive1 = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 4,
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 4,
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 768 },
+            items: 2
+        },
+        XlMobile: {
+            breakpoint: { max: 768, min: 640 },
+            items: 2,
+        },
+        mobile: {
+            breakpoint: { max: 640, min: 0 },
+            items: 1,
+        },
+    };
+    const responsive2 = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 1280 },
+            items: 8,
+        },
+        desktop: {
+            breakpoint: { max: 1280, min: 1024 },
+            items: 6,
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 768 },
+            items: 4,
+        },
+        XlMobile: {
+            breakpoint: { max: 768, min: 568 },
+            items: 4,
+        },
+        mobile: {
+            breakpoint: { max: 568, min: 0 },
+            items: 2,
+        },
+    };
+
+
     return (
-        <div className='flex flex-col justify-center mt-12 m-0 p-0 box-border '>
-            <div className='max-w-[1280px] m-auto h-fit'>
-                <div  className='w-full flex justify-between items-center h-fit py-7'>
-                    <div >
+        <div className='flex flex-col  box-border'>
+            <div className='h-fit md:px-[130px]  m-auto  max-w-[1440px] xs:px-[100px] ss:px-[36px] '>
+
+                <div className='w-full flex ss:flex-col xs:flex-row xs:justify-between ss:justify-center items-center h-fit py-7'>
+                    <div className="flex items-center ss:justify-center md:justify-start ss:w-full xs:w-[48%] border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded ">
                         <p className='flex items-center cursor-pointer select-none'>
-                            <span className='not-italic font-normal text-2xl leading-7 text-black'>Deals under:</span>
-                            <span className='flex mr-2  not-italic font-bold text-2xl leading-7 text-black'>100$<img className='mt-1' src={arrowBottomFull} alt="next" /></span> </p>
+                            <span className='not-italic font-normal xs:text-lg md:text-2xl ss:text-xl leading-7 text-black'>Deals under:</span>
+                            <span className='flex mr-2  not-italic md:font-bold ss:font-bold xs:font-bolder xs:text-base md:text-2xl ss:text-2xl leading-7 text-black'>100$<img className='mt-1' src={arrowBottomFull} alt="next" /></span> </p>
                     </div>
-                    <div >
+                    <div className="flex items-center ss:justify-center md:justify-end ss:w-full xs:w-[48%] ss:mt-4 xs:mt-0 border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded">
                         <p className='flex items-center cursor-pointer select-none'>
-                            <span className='not-italic font-medium mr-2 text-base leading-4 text-right text-black'>Stores closest to you</span>
+                            <span className='not-italic font-medium mr-2 md:text-base ss:text-base xs:text-sm leading-4 text-right text-black'>Stores closest to you</span>
                             <span><img src={next} alt="next" /></span> </p>
                     </div>
 
                 </div>
-                <div className='w-full h-fit py-7'>
-                    <Swiper
-                        slidesPerView={7}
-                        breakpoints={{
-                            // when window width is >= 640px
-                            480: {
-                                width: 480,
-                                slidesPerView: 3,
-                            },
-                            640: {
-                                width: 640,
-                                slidesPerView: 4,
-                            },
-                            // when window width is >= 768px
-                            768: {
-                                width: 768,
-                                slidesPerView: 5,
-                            },
-                            1024: {
-                                width: 1024,
-                                slidesPerView: 7,
-                            },
-                            1280: {
-                                width: 1280,
-                                slidesPerView: 8,
-                            },
-                            1440: {
-                                width: 1440,
-                                slidesPerView: 9,
-                            },
-                        }}
-                        spaceBetween={30}
-                        grabCursor={true}
+                <div className='w-full h-fit py-7 '>
+                    <Carousel
+                        responsive={responsive2}
+                        additionalTransfrom={0}
+                        arrows
+                        autoPlaySpeed={3000}
+                        centerMode={false}
+                        containerClass="container"
+                        dotListClass=""
+                        draggable
+                        focusOnSelect={false}
+                        infinite={false}
+                        itemClass=""
+                        keyBoardControl
+                        minimumTouchDrag={80}
+                        pauseOnHover
+                        renderArrowsWhenDisabled={false}
+                        renderButtonGroupOutside={false}
+                        renderDotsOutside={false}
+                        autoPlay={true}
 
+
+                        className='w-[100%] flex justify-between py-3 '
                     >
                         {
                             carosuelData?.map(data => {
                                 return (
                                     data.campany.map(data => {
                                         return (
-                                            <SwiperSlide key={data.id} >
-                                                <div className='w-40 flex flex-col justify-center items-center h-fit'>
-                                                    <div className='w-32 h-32 bg-gray-100 rounded-lg flex justify-center items-center cursor-pointer -ml-5'>
-                                                        <p className='not-italic font-medium text-base leading-4 text-center text-black'>{data?.type || "0"}</p>
-                                                    </div>
-                                                    <div >
-                                                        <p className='not-italic font-medium text-base leading-4 text-center mt-5 text-black -ml-5'>{data?.name || "type"}</p>
-                                                    </div>
+                                            <div key={data.id} className='ss:w-30 ls:w-40 flex flex-col justify-center items-center h-fit ml-[-10px]'>
+                                                <div className='ls:h-32 ls:w-32 ss:py-5 ss:px-10 ls:p-0 bg-gray-100 rounded-lg flex justify-center items-center cursor-pointer  '>
+                                                    <p className='not-italic font-medium text-base leading-4 text-center text-black'>{data?.type || "0"}</p>
                                                 </div>
-                                            </SwiperSlide>
+                                                <div >
+                                                    <p className='not-italic font-medium ss:text-sm xs:text-base leading-4 text-center ls:mt-5 ss:mt-2 text-black '>{data?.name || "type"}</p>
+                                                </div>
+                                            </div>
 
                                         )
                                     })
@@ -373,28 +411,27 @@ export default function ClothesSlider() {
                             })
                         }
 
-                    </Swiper>
+                    </Carousel>
                 </div>
             </div>
             <div className='w-full h-fit my-7 border-y	border-solid	border-borderColorCard'>
-                <div className='max-w-[1280px] m-auto h-fit'>
-                    <div className='w-full flex items-center h-[560px] py-7'>
+                <div className='h-fit md:px-[130px]  m-auto  max-w-[1440px] xs:px-[100px] ss:px-[36px] '>
+                    <div className='w-full flex items-center xs:h-[560px] ss:h-[400px] xs:py-7 ss:py-1'>
+                        <div className='w-full 		xs:my-5 xs:py-7 '>
+                            <Carousel
+                                responsive={responsive1}
+                                autoPlay={true}
 
-                        <Swiper
-                            slidesPerView={4}
-                           
-                            spaceBetween={20}
-                            grabCursor={true}
-                            className='w-full h-full mt-7'
 
-                            autoplay={{ delay: 8000, disableOnInteraction: false, reverseDirection: true, waitForTransition: true }}
-                        >
-                            {
-                                productList.map(data => {
-                                    return (
-                                        <SwiperSlide >
-                                            <div key={data.id} className="w-[298px] h-[470px] border border-solid	border-borderColorCard overflow-hidden rounded-t-lg		">
-                                                <div className='relative w-full   h-[340px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
+                                autoPlaySpeed={5000}
+                                infinite={true}
+                                className='w-[100%] flex xs:justify-between ss:pl-5 xs:pl-0'
+                            >
+                                {
+                                    productList.map(data => {
+                                        return (
+                                            <div key={data.id} className="xs:w-[95%] ss:w-[85%] ss:h-[320] xs:h-[470px] border border-solid	border-borderColorCard overflow-hidden rounded-t-lg		">
+                                                <div className='relative w-full  ss:h-[206px] xs:h-[340px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
                                                     {
                                                         data.ProducImg ?
                                                             <img className='w-full h-full m-auto' src={data.ProducImg} alt="ProducImg" />
@@ -429,24 +466,24 @@ export default function ClothesSlider() {
 
                                                     </div>
                                                 </div>
-                                                <div className="w-full h-32 rounded-b-1xl bg-white p-4 flex flex-wrap content-between">
-                                                    <div className="w-full h-[18px] not-italic font-normal text-base leading-4 text-black">
+                                                <div className="w-full xs:h-32 ss:h-[114px] rounded-b-1xl bg-white p-4 flex flex-wrap content-between ">
+                                                    <div className="w-full h-[18px] not-italic font-normal ss:text-xs sm:text-xs ll:text-base leading-4 text-black">
                                                         {data?.title || "NoData"}
                                                     </div>
                                                     <div className="w-full flex justify-between items-center">
                                                         <div className='flex items-center justify-between'>
                                                             <StarRatingComponent
                                                                 name="rate"
-                                                                className="text-3xl"
+                                                                className="ss:text-xl ll:text-3xl sm:text-lg"
                                                                 starCount={5}
                                                                 value={rating}
                                                                 onStarClick={onStarClick}
                                                                 emptyStarColor={"#c1c1c1"}
                                                             />
-                                                            <span className='not-italic font-normal text-base leading-4 text-right text-gray-500 ml-1 flex items-center mt-2'>({data?.starCount || 0})</span>
+                                                            <span className='not-italic font-normal ss:text-xs ll:text-base  sm:text-xs leading-4 text-right text-gray-500 ml-1 flex items-center ss:mt-1 sm:mt-[1px]   ll:mt-2'>({data?.starCount || 0})</span>
 
                                                         </div>
-                                                        <div className="not-italic font-medium text-base leading-4 text-black">
+                                                        <div className="not-italic font-medium  ss:text-sm  sm:text-xs  ll:text-base leading-4 text-black">
                                                             <b><span>{data?.shirtSize || 0}</span></b>
 
                                                         </div>
@@ -465,17 +502,16 @@ export default function ClothesSlider() {
                                                     </div>
 
                                                 </div>
-
-
                                             </div>
-                                        </SwiperSlide>
-                                    )
-                                })}
+                                        )
+                                    })
+                                }
 
-
-                        </Swiper>
-
+                            </Carousel>
+                        </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

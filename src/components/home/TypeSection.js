@@ -5,6 +5,9 @@ import 'swiper/swiper-bundle.css';
 import "swiper/css";
 import "swiper/css/pagination";
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 export default function TypeSection() {
     SwiperCore.use([Navigation, Pagination, Autoplay]);
     const [typeSectionData, setTypeSectionData] = useState([
@@ -94,29 +97,51 @@ export default function TypeSection() {
         },
 
     ])
-
+    const responsive1 = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 4,
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3,
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 768 },
+            items: 2
+        },
+        XlMobile: {
+            breakpoint: { max: 768, min: 640 },
+            items: 2,
+        },
+        mobile: {
+            breakpoint: { max: 640, min: 0 },
+            items: 1,
+        },
+    };
     return (
-        <div className='flex flex-col my-24 box-border'>
-            <div className='max-w-[1280px] m-auto h-fit '>
-                <div className='w-full h-full flex justify-between'>
-                    <Swiper
-                        slidesPerView={3}
+        <div className='flex flex-col box-border'>
+            <div className='h-fit md:px-[130px]  m-auto  max-w-[1440px] xs:px-[100px] ss:px-[15px]  my-7 '>
+                <div className='w-full h-full flex justify-between  '>
+                    <Carousel
+                        responsive={responsive1}
+                        autoPlay={true}
 
-                        spaceBetween={20}
-                        grabCursor={true}
-                        className='w-full h-full '
 
-                        autoplay={{ delay: 8000, disableOnInteraction: false, reverseDirection: false, waitForTransition: true }}
+                        autoPlaySpeed={5000}
+                        infinite={true}
+                        className='w-[100%] flex'
                     >
 
                         {
                             typeSectionData?.map(data => {
                                 return (
-                                    <SwiperSlide >
-                                        <div key={data.id} className='w-[406px] h-[426px] bg-white border border-solid	border-borderColorCard rounded-lg p-8 flex flex-wrap content-between'>
-                                            <div className='w-full flex items-center justify-between h-1/10'>
-                                                <p className='not-italic font-medium text-2xl leading-7 text-black'>{data?.type || "type"}</p>
-                                                <p className='flex items-center'><span className='not-italic font-medium text-base leading-4 text-right mr-2 text-black'>See more</span><img src={next} alt="next" /></p>
+                                    <div >
+                                        <div key={data.id} className='w-[98%] lg:h-[426px] ll:h-[400px] md:h-[390px] ss:h-[350px] bg-white border border-solid	border-borderColorCard	rounded-lg ss:p-3 lg:ml-1  xl:p-8 flex flex-wrap ss:content-between sm:content-between  '>
+                                            <div className='w-full flex items-center justify-between ss:h-fit sm:h-1/10  '>
+                                                <p className='not-italic font-medium md:text-lg ss:text-base ll:text-xl lg:text-xl xl:text-2xl leading-7 text-black'>{data?.type || "type"}</p>
+                                                <p className='flex items-center'><span className='not-italic font-medium md:text-sm xl:text-base lg:text-xs ss:text-xs  ll:text-base leading-4 text-right mr-2 text-black'>See more</span><img src={next} alt="next" /></p>
 
                                             </div>
                                             <div className='w-full flex flex-wrap rounded h-4/5'>
@@ -140,11 +165,11 @@ export default function TypeSection() {
 
                                             </div>
                                         </div>
-                                    </SwiperSlide>
+                                    </div>
                                 )
                             })
                         }
-                    </Swiper>
+                    </Carousel>
 
 
 
