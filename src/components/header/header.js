@@ -8,7 +8,7 @@ const Header = () => {
     <header className="border border-searchBgColor">
         <TopHeader />
         <MediumHeader />
-        <BottomHeader />
+        {/* <BottomHeader /> */}
       
     </header>
   );
