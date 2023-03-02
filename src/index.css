@@ -44,17 +44,13 @@ select {
   transform: translateX(-100%);  
   transition: 0.5s;
   z-index: -1;
- height: 0;
+  height: 0;
   background-color: #fff;
-}
-.openFile + button {
-  transform: rotate(180deg);
 }
 
 .closeFile{
   display: block;
   transform: translateX(0%);  
-  
   transition: 0.5s;
   z-index: -1;
   background-color: #fff;
