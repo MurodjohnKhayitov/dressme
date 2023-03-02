@@ -5,14 +5,14 @@ import MainPageSliders from "../components/home/MainPageSliders";
 import TypeSection from "../components/home/TypeSection";
 
 const Home = () => {
-    return(
-        <>
-        {/* <MainPageSliders/> */}
-        <CollectionCards/>
-        {/* <ClothesSlider/> */}
-        {/* <TypeSection/> */}
-        
-        </>
+    return (
+        <div className=" border-solid border-red-700">
+            <MainPageSliders />
+            <CollectionCards />
+            <ClothesSlider />
+            <TypeSection />
+
+        </div>
     )
 }
 export default Home

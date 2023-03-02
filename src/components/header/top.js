@@ -6,7 +6,7 @@ import { styles } from "../../util/style";
 const TopHeader = () => {
     return(
         <div className="top bg-bgColor hidden md:block">
-            <div className="w-full max-w-[1440px] ss:px-4 md:px-[130px] mx-auto">
+            <div className="w-full max-w-[1440px] ss:px-4 md:px-[130px] mx-auto ">
                 <div className={`${styles.container} mx-auto  text-[15px]`}>
                     <div className={`${styles.flexBetween} py-[2px]`}>
                         <div className="left flex items-center">

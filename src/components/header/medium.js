@@ -12,8 +12,8 @@ const MediumHeader = () => {
   const toggleHamburger = () => setHamburgerMenu((val) => !val);
 
   return (
-    <div className={`flex flex-col`}>
-        <div className="w-full max-w-[1440px] ss:px-4 md:px-[130px] mx-auto">
+    <div className={`flex flex-col`}> 
+        <div className=" max-w-[1440px] ss:px-4 md:px-[130px] mx-auto">
         
             {/* Starting Full Screen page section */}
             <div className="w-full flex items-center justify-between py-3 ">
@@ -25,7 +25,7 @@ const MediumHeader = () => {
                 </div>
 
                 {/*Starting of Opened Hamburger menu section */}
-                <div className={`${ !hamburgerMenu ? "flex flex-col" : "hidden h-0" } w-full left-0 right-0 absolute top-16 ll:flex-fit`}>
+                <div className={`${ !hamburgerMenu ? "flex flex-col" : "hidden h-0" } w-full left-0 right-0 absolute top-16 ll:flex-fit bg-white p-2 `}>
                     {/* Searching section */}
                     <div className="search flex items-center justify-between rounded font-medium h-12 mt-6 mb-6 border border-searchBg  md:hidden w-full">
                     <img src={search} alt="search" className=" flex ss:pl-[11.65px] md:hidden"/>
