@@ -7,7 +7,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { next, category, arrowBottomFull, mouse, toBottom } from '../../assets/imgs'
 
 
-// import required modules
+// import required modules``
 export default function MainPageSliders() {
     SwiperCore.use([Navigation, Pagination, Autoplay]);
     const [clothesToggle, setClothesToggle] = useState(true)
@@ -47,9 +47,9 @@ export default function MainPageSliders() {
     ])
 
     return (
-        <div className='box-border flex justify-between'>
-            <div className="max-w-[1280px] m-auto h-fit py-8">
-                <div className='w-full m-auto pb-7	'>
+        <div className='box-border flex flex-col border border-solid border-slate-900	'>
+            <div className="max-w-[1440px]  h-fit px-[130px] border border-solid border-black-400">
+                <div className='w-full 	 border border-solid border-red-900	'>
                     <Swiper
                         slidesPerView={7}
                         breakpoints={{
@@ -113,7 +113,7 @@ export default function MainPageSliders() {
 
                     </Swiper>
                 </div>
-                <div className='w-full m-auto py-7'>
+                <div className='w-full border border-solid border-red-900'>
                     <Swiper
                         slidesPerView={7}
                         breakpoints={{

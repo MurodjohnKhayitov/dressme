@@ -119,12 +119,10 @@ export default function TypeSection() {
                                                 <p className='flex items-center'><span className='not-italic font-medium text-base leading-4 text-right mr-2 text-black'>See more</span><img src={next} alt="next" /></p>
 
                                             </div>
-                                            {/* ------------------- */}
                                             <div className='w-full flex flex-wrap rounded h-4/5'>
                                                 {
                                                     data?.group?.map(data => {
                                                         return (
-                                                            // -----------------
                                                             <div className='w-6/12 h-1/2 p-2  border border-solid	border-borderColorCard  bg-white flex flex-wrap content-between'>
                                                                 <div className='w-full h-3/4 bg-bgColor'>
                                                                     {data.img ? <img src={data?.img} alt="data" /> : null}

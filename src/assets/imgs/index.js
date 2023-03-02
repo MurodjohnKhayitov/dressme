@@ -48,3 +48,32 @@ export {default as blog} from './blog.svg'
 export {default as businessBlack} from './business-black.svg'
 export {default as contact} from './contact.svg'
 export {default as helpBlack} from './help-black.svg'
+
+
+// -----Contact--------
+export {default as dashborad} from './Contact/dashboard.svg'
+export {default as locate} from './Contact/location.svg'
+
+export {default as error} from './Contact/error.svg'
+export {default as adduser} from './Contact/Add User - 1.svg'
+export {default as list} from './Contact/list.svg'
+export {default as categoryContact} from './Contact/category.svg'
+export {default as maps} from './Contact/map.svg'
+
+export {default as baby} from './Contact/baby.svg'
+export {default as man} from './Contact/man.svg'
+export {default as femaleContact} from './Contact/female.svg'
+export {default as girls} from './Contact/girl.svg'
+export {default as childre} from './Contact/child.svg'
+
+export {default as upload} from './Contact/upload.svg'
+
+export {default as markets} from './Contact/shop.svg'
+export {default as russi} from './Contact/russia.svg'
+export {default as call} from './Contact/call.svg'
+export {default as downIcons} from './Contact/downIcons.svg'
+export {default as toRightIcons} from './Contact/toRightIcons.svg'
+export {default as message} from './Contact/message.svg'
+export {default as privateCheck} from './Contact/konfidelnos.svg'
+export {default as homeTrend} from './Contact/home-trend-up.svg'
+export {default as pictureframa} from './Contact/picture-frame.svg'
