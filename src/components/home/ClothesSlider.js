@@ -351,9 +351,9 @@ export default function ClothesSlider() {
 
     return (
         <div className='flex flex-col  box-border'>
-            <div className='h-fit md:px-[130px]  m-auto  max-w-[1440px] xs:px-[100px] ss:px-[36px] '>
+            <div className='  max-w-[1440px] h-fit md:px-[130px]  m-auto xs:px-[100px] ss:px-[36px]  box-border '>
 
-                <div className='w-full flex ss:flex-col xs:flex-row xs:justify-between ss:justify-center items-center h-fit py-7'>
+                <div className=' flex ss:flex-col xs:flex-row xs:justify-between ss:justify-center items-center h-fit py-7'>
                     <div className="flex items-center ss:justify-center md:justify-start ss:w-full xs:w-[48%] border ss:border-solid  md:border-none ss:border-borderColorCard ss:h-[44px] rounded ">
                         <p className='flex items-center cursor-pointer select-none'>
                             <span className='not-italic font-normal xs:text-lg md:text-2xl ss:text-xl leading-7 text-black'>Deals under:</span>
@@ -415,7 +415,7 @@ export default function ClothesSlider() {
                 </div>
             </div>
             <div className='w-full h-fit my-7 border-y	border-solid	border-borderColorCard'>
-                <div className='h-fit md:px-[130px]  m-auto  max-w-[1440px] xs:px-[100px] ss:px-[36px] '>
+                <div className='h-fit md:px-[130px]  m-auto  max-w-[1440px] xs:px-[100px] ss:px-[36px]  box-border '>
                     <div className='w-full flex items-center xs:h-[560px] ss:h-[400px] xs:py-7 ss:py-1'>
                         <div className='w-full 		xs:my-5 xs:py-7 '>
                             <Carousel

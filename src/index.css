@@ -22,8 +22,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-body::-webkit-scrollbar {
+body{
+  overflow-x: hidden;
+}
+/* body::-webkit-scrollbar {
   width: 10px;
 
 }
@@ -32,7 +34,7 @@ body::-webkit-scrollbar-thumb {
   height: 100px;
   color: var(--primaryColor);
   width: 10px;
-}
+} */
 
 ul {
   list-style-type: none;
