@@ -9,9 +9,10 @@ import { RiFacebookCircleLine, RiMessengerLine } from "react-icons/ri";
 const Footer = () => {
 
     return (
-        <div className="flex flex-col  box-border">
-            <div className='w-full h-full md:px-[130px] m-auto max-w-[1440px] xs:px-[100px] ss:px-[36px] '>
-                <div className='w-full h-full '>
+
+        <div className="w-full h-full  flex flex-col  box-border ">
+            <div className='w-full h-full md:px-[130px] m-auto max-w-[1440px] xs:px-[100px] ss:px-[36px]  '>
+                <div className='w-full h-full  '>
                     <div className="flex flex-wrap justify-between ss:p-0   py-7 px-10 md:border md:border-solid md:border-searchBgColor  ">
                         {/* 1 */}
                         <div className=" lg:w-1/5  ss:py-2   ss:w-full ss:mb-4    ">
@@ -72,8 +73,9 @@ const Footer = () => {
 
 
                         <div className="lg:w-1/5 sm:py-3  ss:w-6/12  ">
-                            <div className="font-medium w-fit  text-xl cursor-pointer  ss:mb-4 ss:text-lg md:mb-[30px] hover:border-b-2 hover:text-fullBlue hover:border-fullBlue">Categories</div>
-                            <ul>
+
+                            <div className="font-medium w-fit  text-xl cursor-pointer   ss:mb-4 ss:text-lg md:mb-[30px] hover:border-b-2 hover:text-fullBlue hover:border-fullBlue">Categories</div>
+                            <ul className="">
                                 <li className="ss:mb-1 md:mb-4">
                                     <Link to='#' className="flex items-center">
                                         <img src={man} alt="" className="m-0" />
@@ -115,19 +117,20 @@ const Footer = () => {
                                 <p className="not-italic font-medium mx-2 text-base leading-4 text-black lg:text-xs">Форма для обратной связи</p>
                                 <p><img src={toRightIcons} alt="img" /></p>
                             </div>
-                            <div className="font-medium w-fit cursor-pointer text-xl ss:hidden  lg:block py-3  ss:mb-4 ss:text-lg md:mb-[30px] hover:border-b-2 hover:text-fullBlue hover:border-fullBlue">Feedback Form</div>
+
+                            <div className="font-medium w-fit cursor-pointer text-xl ss:hidden    lg:block py-3  ss:mb-4 ss:text-lg md:mb-[18px] hover:border-b-2 hover:text-fullBlue hover:border-fullBlue">Feedback Form</div>
 
 
                             {/* 5 */}
-                            <div className=" w-full h-fit ss:my-4  ">
+                            <div className=" w-full h-fit ss:my-0   ">
                                 <ul className="w-full lg:h-fit ss:h-10  lg:block ss:flex items-center justify-between ">
-                                    <li className="lg:w-full ss:w-6/12 h-full  ss:flex items-center md:mb-4">
+                                    <li className="lg:w-full ss:w-6/12 h-full  ss:flex items-center md:mb-2">
                                         <Link to='#' className="flex items-center">
                                             <img src={markets} alt="" />
                                             <span className="font-normal ml-2  ss:text-sm md:text-base">Markets</span>
                                         </Link>
                                     </li>
-                                    <li className="lg:w-full ss:w-6/12 h-full   flex items-center md:mb-4">
+                          <li className="lg:w-full ss:w-6/12 h-full   flex items-center md:mb-2">
                                         <Link to='#' className="flex items-center">
                                             <img src={message} alt="" />
                                             <span className="font-normal ml-2  ss:text-sm md:text-base">Message</span>
@@ -135,13 +138,15 @@ const Footer = () => {
                                     </li>
                                 </ul>
                                 <ul className="w-full lg:h-fit ss:h-10 lg:block ss:flex items-center justify-between ">
-                                    <li className="lg:w-full ss:w-6/12 h-full flex items-center md:mb-4">
+
+                                    <li className="lg:w-full ss:w-6/12 h-full flex items-center md:mb-2">
                                         <Link to='#' className="flex items-center">
                                             <img src={homeTrend} alt="" />
                                             <span className="font-normal ml-2  ss:text-sm md:text-base">Business</span>
                                         </Link>
                                     </li>
-                                    <li className="lg:w-full ss:w-6/12 h-full   lg:block ss:flex items-center md:mb-4">
+
+                                    <li className="lg:w-full ss:w-6/12 h-full   lg:block ss:flex items-center md:mb-2">
                                         <Link to='#' className="flex items-center">
                                             <img src={call} alt="" />
                                             <span className="font-normal ml-2  ss:text-sm md:text-base">Contact</span>
@@ -149,7 +154,8 @@ const Footer = () => {
                                     </li>
                                 </ul>
                                 <ul className="w-full lg:h-fit ss:h-10  lg:block ss:flex items-center justify-between ">
-                                    <li className="lg:w-full ss:w-6/12 h-full   flex items-center md:mb-4">
+
+                                    <li className="lg:w-full ss:w-6/12 h-full   flex items-center md:mb-2">
                                         <Link to='#' className="flex items-center">
                                             <img src={map} alt="" />
                                             <span className="font-normal ml-2  ss:text-sm md:text-base">Maps</span>
@@ -159,14 +165,15 @@ const Footer = () => {
 
                                 </ul>
                                 <ul className="w-full lg:h-fit ss:h-10  lg:block ss:flex items-center justify-between ">
-                                    <li className="lg:w-full ss:w-6/12 h-full   flex items-center md:mb-4">
+
+                                    <li className="lg:w-full ss:w-6/12 h-full   flex items-center md:mb-2">
                                         <Link to='#' className="flex items-center">
                                             <img src={list} alt="" />
                                             <span className="font-normal ml-2  ss:text-sm md:text-base">My order</span>
                                         </Link>
                                     </li>
                                 </ul>
-                                <ul className="w-full lg:h-fit ss:h-10  lg:block ss:flex items-center justify-between md:mb-4">
+                                <ul className="w-full lg:h-fit ss:h-10  lg:block ss:flex items-center justify-between md:mb-2">
                                     <li className="lg:w-full ss:w-6/12 h-full  flex items-center ">
                                         <Link to='#' className="flex items-center">
                                             <img src={privateCheck} alt="" />
@@ -277,8 +284,9 @@ const Footer = () => {
                                 <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Shorts</button>
                                 <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Jeans</button>
                             </div>
-                            <div className="flex ss:flex-row lg:flex-col lg:justify-between ss:justify-center items-center ss:flex-col lg:flex-row ">
-                                <div className=" ss:w-full lg:w-fit flex justify-between items-center font-medium">
+
+                            <div className="flex  lg:justify-between ss:justify-center items-center  mt-5 ">
+                                <div className=" ss:w-full lg:w-fit flex justify-between items-center font-medium ">
                                     <div className="flex justify-between items-center ">
                                         <img src={footer} alt="" /><span className="sm:text-xl ss:text-xs">2022 — Dress.me</span>
                                     </div>

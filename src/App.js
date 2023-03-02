@@ -5,11 +5,12 @@ import RouterList from './views/RouterList'
 const App = () => {
   return (
     <div className="font-aeonicPro">
-      <BrowserRouter>
-        <Header />
-        <RouterList />
-        <Footer />
-      </BrowserRouter>
+
+        <BrowserRouter>
+            <Header />
+          <RouterList/>
+            <Footer />
+        </BrowserRouter>
     </div>
   );
 }
