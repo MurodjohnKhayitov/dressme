@@ -351,30 +351,26 @@ export default function CollectionCards() {
 
                                         </div>
                                         <div className="w-full flex items-center justify-between">
-                                            <div>
+                                            <div className='flex flex-col'>
                                                 {
                                                     data.sale ?
-                                                        <b className='not-italic font-medium text-xl leading-7 text-red-700 md:text-2xl'>{data?.sale}
-                                                            <span className='not-italic line-through  font-normal text-sm leading-4 text-gray-500 ml-2'>{data?.price}</span></b>
-                                                        :
-                                                        <b style={{ color: "black" }}>{data?.price} </b>
+                                                        <b className='not-italic ls:relative font-medium text-xl leading-7 text-red-700 ls:text-lg md:text-2xl'>{data?.sale}
+                                                            <span className='not-italic line-through  text-sm leading-4 text-gray-500 ml-2 ls:absolute ls:left-0 ls:-top-3 ls:ml-0'>{data?.price}</span>
+                                                        </b>
+                                                        :<b style={{ color: "black" }}>{data?.price} </b>
                                                 }
                                             </div>
                                             <div className="flex items-center">
                                                 {
                                                     data.sale ?
                                                         <>  <span><img src={shirt} alt="user" /></span>
-                                                            <span style={{ margin: "0px 5px" }}>+</span></> : null
+                                                            <span className='mx-[5px] ls:mx-[2px]'>+</span></> : null
                                                 }
                                                 <span><img src={addBag} alt="user" /></span>
 
                                             </div>
-
                                         </div>
-
                                     </div>
-
-
                                 </div>
                             )
                         })
