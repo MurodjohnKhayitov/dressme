@@ -190,12 +190,12 @@ const Footer = () => {
                         <div className=" w-full h-11 lg:hidden flex items-center justify-between my-4  ">
                             <div className="w-[47%] h-full  flex items-center justify-center  border border-solid border-borderColorCard rounded">
                                 <p><img src={locate} alt="" /></p>
-                                <p className="not-italic font-medium mx-5 text-base leading-4 text-black">Toshkent</p>
+                                <p className="not-italic font-medium ll:mx-5 ss:mx-2 ll:text-base ss:text-sm  leading-4 text-black">Toshkent</p>
                                 <p><img src={downIcons} alt="img" /></p>
                             </div>
                             <div className="w-[47%] h-full flex items-center justify-center  border border-solid border-borderColorCard rounded">
                                 <p><img src={russi} alt="" /></p>
-                                <p className="not-italic font-medium mx-5 text-base leading-4 text-black">Russia</p>
+                                <p className="not-italic font-medium ll:mx-5  ss:mx-2 ll:text-base ss:text-sm leading-4 text-black">Russia</p>
                                 <p><img src={downIcons} alt="img" /></p>
                             </div>
                         </div>
@@ -285,16 +285,16 @@ const Footer = () => {
                                 <button className="font-medium text-sm bg-searchBgColor rounded ss:py-[5px] ss:px-2 xs:py-[10px] xs:px-4 mr-4 mb-4">Jeans</button>
                             </div>
 
-                            <div className="flex  lg:justify-between ss:justify-center items-center  mt-5 ">
-                                <div className=" ss:w-full lg:w-fit flex justify-between items-center font-medium ">
+                            <div className="lg:flex ss:block  lg:justify-between ss:justify-center items-center  mt-10 ">
+                                <div className=" ss:w-full  lg:w-fit flex justify-between  items-center font-medium ">
                                     <div className="flex justify-between items-center ">
-                                        <img src={footer} alt="" /><span className="sm:text-xl ss:text-xs">2022 — Dress.me</span>
+                                        <img src={footer} alt="" /><span className="sm:text-base ss:text-xs">2022 — Dress.me</span>
                                     </div>
                                     <div>
-                                        <span className="ml-6 sm:text-xl ss:text-xs">All Rights reserved</span>
+                                        <span className="ml-6 sm:text-base ss:text-xs">All Rights reserved</span>
                                     </div>
                                 </div>
-                                <div className="font-medium ss:mt-3 lg:m-0 ss:text-xs sm:text-xl ">Designed by <Link to='#' className="text-fullBlue border-b border-fullBlue">Prince.UI</Link>
+                                <div className="font-medium text-center ss:mt-3 lg:m-0 ss:text-xs sm:text-base ">Designed by <Link to='#' className="text-fullBlue border-b border-fullBlue">Prince.UI</Link>
                                 </div>
                             </div>
                         </div>
