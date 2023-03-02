@@ -256,38 +256,46 @@ export default function CollectionCards() {
 
 
     return (
-        <div className="flex flex-col mt-3 box-border">
+        <div className="flex mt-3 box-border ">
+            <div className={`max-w-[1440px] md:px-[130px] m-auto h-fit py-8 `}>
 
-            <div className={`max-w-[1280px] m-auto h-fit py-8`}>
-
-                <div className="w-full flex justify-between">
-                    <div className="not-italic font-medium text-2xl leading-9 text-black	">
+                <div className="w-full flex justify-between flex-col md:flex-row px-4 md:px-0">
+                    <div className="not-italic font-medium text-2xl leading-9 text-black mb-6 md:mb-0">
                         Collections of clothes that suit you
                     </div>
-                
-                    <div className="rounded w-[308px] h-[52px] flex justify-between bg-slate-50 border border-solid	border-searchBgColor	 ">
-                        <button className='w-[152px] h-[50px] text-xs text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded'>Cards</button>
-                        <button className='w-[152px] h-[50px] text-xs text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded'>Sets</button>
-
+                    <div className="rounded flex justify-between bg-slate-50 border border-solid border-searchBgColor mx-auto h-[42px] md:h-[52px] ss:w-full md:w-[308px] md:mx-0">
+                        <button className='h-[42px] text-xs text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded w-1/2 md:w-[152px] md:h-[50px]'>Cards</button>
+                        <button className='h-[42px] text-xs text-black text-center font-normal not-italic focus:bg-white focus:border focus:border-solid	focus:border-inheri focus:rounded w-1/2 md:w-[152px] md:h-[50px]'>Sets</button>
                     </div>
-
                 </div>
-                <div className="flex justify-between flex-wrap	mt-[50px] p-1 gap-5">
+                
+            
+                <div className="flex flex-row justify-between flex-wrap	mt-[25px] p-1 ls:gap ls:grid ls:gap-2 grid-cols-2  px-4 w-full md:px-0 mx-auto md:mx-0 md:mt-[50px] md:gap-5">
                     {
                         productList.map(data => {
                             return (
 
-                                <div key={data.id} className="w-[298px] h-[470px] border border-solid	border-borderColorCard overflow-hidden rounded-t-lg		">
-                                    <div className='relative w-full   h-[340px] bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard'>
+                                <div key={data.id} className="border border-solid border-borderColorCard overflow-hidden rounded-t-lg w-full h-auto mb-3 md:w-[298px] md:h-[470px] md:mb-0
+                                ">
+                                    
+                                    <div className='relative w-full bg-white flex flex-wrap content-between items-center overflow-hidden border-b border-solid	border-borderColorCard ls:h-[210px] md:h-[340px]'>
                                         {
                                             data.ProducImg ?
-                                                <img className='w-full h-full m-auto' src={data.ProducImg} alt="ProducImg" />
+                                                <img className='w-full m-auto ls:h-40% md:h-full' src={data.ProducImg} alt="ProducImg" />
                                                 :
-                                                <img className='w-full h-fit' src={data.noProductImg} alt="noProductImg" />
+                                                <img className='w-full h-fit ls:h-40% md:h-full' src={data.noProductImg} alt="noProductImg" />
                                         }
                                         <div className='w-full flex justify-between absolute top-px p-2'>
                                             <div>
-                                                {data?.discount ? <p className="w-[140px] h-8  bg-white rounded flex items-center justify-around not-italic font-normal text-sm cursor-pointer leading-4  border border-solid	border-borderColorCard text-black"><span><img src={discount} alt="discount" /></span><span>Discount</span><span style={{ color: "#D50000" }}>{data.discount}</span></p> : null}
+                                                {data?.discount ?
+                                                
+                                                <p className=" h-8  bg-white rounded flex items-center justify-around not-italic font-normal text-sm cursor-pointer leading-4  border border-solid	border-borderColorCard text-black w-[130px] md:w-[140px]">
+                                                    <span><img src={discount} alt="discount" /></span>
+                                                    <span>Discount</span>
+                                                    <span style={{ color: "#D50000" }}>{data.discount}</span>
+                                                </p> 
+                                                : null
+                                                }
                                                 {data?.video ? <p className="w-[82px] h-8 mt-2 bg-white rounded flex items-center justify-around not-italic font-normal text-sm cursor-pointer leading-4  border border-solid	border-borderColorCard text-black"><span><img src={video} alt="video" /></span><span>{data.video}</span></p> : null}
                                                 {data?.diliver ? <p className="w-[94px] h-8 mt-2 bg-white rounded flex items-center justify-around not-italic font-normal text-sm cursor-pointer leading-4  border border-solid	border-borderColorCard text-black"><span><img src={delivery} alt="delivery" /></span><span>Diliver</span></p> : null}
                                             </div>
@@ -296,57 +304,58 @@ export default function CollectionCards() {
                                                 {data.buy ? <p className='w-8  mt-2 h-8 bg-white rounded flex items-center justify-center cursor-pointer p-1 border border-solid	border-borderColorCard'><img src={bucket} alt="bucket" /></p> : null}
                                             </div>
                                         </div>
-                                        <div className="absolute w-full h-[48px] flex justify-between items-center px-4 bg-white bottom-0  border-t	 border-solid	border-borderColorCard">
-                                            <label className='rounded-full  w-7 h-7 bg-purple-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color1">
+                                        <div className="absolute w-full flex justify-between items-center px-4 bg-white bottom-0  border-t	 border-solid	border-borderColorCard ss:h-[40px] ls:h-[36px] md:h-[48px]">
+                                            <label className='rounded-full  w-5 h-5 bg-purple-500 cursor-pointer  border	 border-solid border-borderColorCard md:w-7 md:h-7' htmlFor="Color1">
                                                 <input className="hidden" type="radio" id="Color1" name="colors" value="1" />
                                             </label>
-                                            <label className='rounded-full  w-7 h-7 bg-black cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color2">
+                                            <label className='rounded-full  w-5 h-5 bg-black cursor-pointer  border	 border-solid	border-borderColorCard md:w-7 md:h-7' htmlFor="Color2">
                                                 <input className="hidden" type="radio" id="Color2" name="colors" value="1" />
                                             </label>
-                                            <label className='rounded-full  w-7 h-7 bg-white cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color3">
+                                            <label className='rounded-full w-5 h-5 bg-white cursor-pointer  border	 border-solid	border-borderColorCard md:w-7 md:h-7' htmlFor="Color3">
                                                 <input className="hidden" type="radio" id="Color3" name="colors" value="1" />
                                             </label>
-                                            <label className='rounded-full  w-7 h-7 bg-zinc-500 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color4">
+                                            <label className='rounded-full  w-5 h-5 bg-zinc-500 cursor-pointer  border	 border-solid border-borderColorCard md:w-7 md:h-7' htmlFor="Color4">
                                                 <input className="hidden" type="radio" id="Color4" name="colors" value="1" />
                                             </label>
-                                            <label className='rounded-full  w-7 h-7 bg-sky-600 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color5">
+                                            <label className='rounded-full  w-5 h-5 bg-sky-600 cursor-pointer  border	 border-solid border-borderColorCard md:w-7 md:h-7' htmlFor="Color5">
                                                 <input className="hidden" type="radio" id="Color5" name="colors" value="1" />
                                             </label>
-                                            <label className='rounded-full  w-7 h-7 bg-amber-400 cursor-pointer  border	 border-solid	border-borderColorCard' htmlFor="Color6">
+                                            <label className='rounded-full w-5 h-5 bg-amber-400 cursor-pointer  border	 border-solid border-borderColorCard md:w-7 md:h-7' htmlFor="Color6">
                                                 <input className="hidden" type="radio" id="Color6" name="colors" value="1" />
                                             </label>
 
                                         </div>
                                     </div>
-                                    <div className="w-full h-32 rounded-b-1xl bg-white p-4 flex flex-wrap content-between">
-                                        <div className="w-full h-[18px] not-italic font-normal text-base leading-4 text-black">
+                                    
+                                    <div className="w-full h-32 rounded-b-1xl bg-white flex flex-wrap content-between ls:py-1 ss:p-4 ls:px-3 md:p-4">
+                                        <div className="w-full not-italic font-normal leading-4 text-black ss:text-base ls:text-xs md:text-base md:h-[18px]">
                                             {data?.title || "NoData"}
                                         </div>
                                         <div className="w-full flex justify-between items-center">
                                             <div className='flex items-center justify-between'>
                                                 <StarRatingComponent
                                                     name="rate"
-                                                    className="text-3xl"
+                                                    className="text-2xl ls:text-xs md:text-3xl"
                                                     starCount={5}
                                                     value={rating}
                                                     onStarClick={onStarClick}
                                                     emptyStarColor={"#c1c1c1"}
                                                 />
-                                                <span className='not-italic font-normal text-base leading-4 text-right text-gray-500 ml-1 flex items-center mt-2'>({data?.starCount || 0})</span>
+                                                <span className='not-italic font-normal text-base leading-4 text-right text-gray-500 ml-1 flex items-center mt-2 ls:text-xs ls:mt-1'>({data?.starCount || 0})</span>
 
                                             </div>
-                                            <div className="not-italic font-medium text-base leading-4 text-black">
+                                            <div className="not-italic font-medium text-sm flex items-end leading-4 text-black md:text-base ls:text-sm">
                                                 <b><span>{data?.shirtSize || 0}</span></b>
 
                                             </div>
 
                                         </div>
                                         <div className="w-full flex items-center justify-between">
-                                            <div >
+                                            <div>
                                                 {
                                                     data.sale ?
-                                                        <b className='not-italic font-medium text-2xl leading-7 text-red-700'>{data?.sale}
-                                                            <span className='not-italic line-through	 font-normal text-sm leading-4 text-gray-500'>{data?.price}</span></b>
+                                                        <b className='not-italic font-medium text-xl leading-7 text-red-700 md:text-2xl'>{data?.sale}
+                                                            <span className='not-italic line-through  font-normal text-sm leading-4 text-gray-500 ml-2'>{data?.price}</span></b>
                                                         :
                                                         <b style={{ color: "black" }}>{data?.price} </b>
                                                 }
