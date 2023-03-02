@@ -7,10 +7,10 @@ import TypeSection from "../components/home/TypeSection";
 const Home = () => {
     return(
         <>
-        <MainPageSliders/>
+        {/* <MainPageSliders/> */}
         <CollectionCards/>
-        <ClothesSlider/>
-        <TypeSection/>
+        {/* <ClothesSlider/> */}
+        {/* <TypeSection/> */}
         
         </>
     )

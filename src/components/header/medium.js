@@ -13,7 +13,7 @@ const MediumHeader = () => {
 
   return (
     <div className={`flex flex-col`}>
-        <div className="w-full ss:px-4 md:px-[250px]">
+        <div className="w-full max-w-[1440px] ss:px-4 md:px-[130px] mx-auto">
         
             {/* Starting Full Screen page section */}
             <div className="w-full flex items-center justify-between py-3 ">
@@ -154,7 +154,7 @@ const MediumHeader = () => {
                 {/*Ending of Opened Hamburger menu section */}
             </div>
                 {/* Logo section */}
-                <div className="ss:w-fit flex justify-center items-center  border border-solid rounded h-12 ss:bg-bgColor md:bg-white ss:px-4 ls:px-9 ll:px-14">
+                <div className=" flex justify-center items-center rounded h-12 ss:bg-bgColor ss:px-4 ls:px-9 ll:px-14 ss:w-fit md:bg-white md:px-0">
                 <img src={logo} alt="logo" />
                 </div>
                 {/* Weather section */}
@@ -167,7 +167,7 @@ const MediumHeader = () => {
 
             {/* Voice section */}
             <div
-                className={`${styles.flexCenter} bg-bgColor border border-searchBgColor px-4 h-12 rounded cursor-pointer hidden md:flex`}>
+                className={`${styles.flexCenter} bg-bgColor border border-searchBgColor px-4 mx-4 h-12 rounded cursor-pointer hidden md:flex`}>
                 <img src={voice} alt="voice" />
             </div>
 
