@@ -10,6 +10,25 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // import required modules``
 export default function MainPageSliders() {
+    const responsive1 = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 6,
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 6,
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 3,
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 2,
+        },
+    };
     const responsive2 = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -18,7 +37,7 @@ export default function MainPageSliders() {
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 5,
+            items: 6,
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -69,21 +88,21 @@ export default function MainPageSliders() {
     return (
         <div className='box-border flex flex-col border border-solid border-slate-900	'>
             <div className="max-w-[1440px]  h-fit px-[130px] border border-solid border-black-400">
-                <div className='w-full 	 border border-solid border-red-900	'>
+                <div className='w-full 	 border border-solid border-red-900	my-5 '>
                     <Carousel
-                        responsive={responsive2}
+                        responsive={responsive1}
                         //   autoPlay={this.props.deviceType !== "mobile" ? true : false}
                         autoPlay={true}
-                        autoPlaySpeed={3000}
+                        autoPlaySpeed={5000}
                         infinite={true}
-                        className='flex justify-between'
+                        className='w-[100%] flex justify-between  border border-solid border-slate-900	py-3	'
                     >
                         {
                             carosuelData?.map(data => {
                                 return (
                                     data.Category.map(data => {
                                         return (
-                                            <SwiperSlide key={data.id} className='w-[19%] h-[260px] rounded'>
+                                            <div key={data.id} className='w-[95%] h-[260px] rounded  '>
                                                 <div className='w-full h-[230px] bg-bgColor border border-solid	border-borderColorCard '>
                                                     {data?.img ? <img src={data?.img} alt="student" /> : null}
                                                 </div>
@@ -91,7 +110,7 @@ export default function MainPageSliders() {
                                                     <p className='not-italic mt-3 font-medium text-xl leading-6 text-black'>{data?.type || "type"}
                                                         <span className='not-italic font-normal text-base leading-4 text-gray-500'>({data?.count || "0"})</span></p>
                                                 </div>
-                                            </SwiperSlide>
+                                            </div>
                                         )
                                     })
                                 )
@@ -100,117 +119,24 @@ export default function MainPageSliders() {
 
                     </Carousel>
                 </div>
-
-                <div className='w-full 	 border border-solid border-red-900	'>
-                    <Swiper
-                        slidesPerView={7}
-                        breakpoints={{
-                            // when window width is >= 640px
-                            480: {
-                                width: 480,
-                                slidesPerView: 1,
-                            },
-                            640: {
-                                width: 640,
-                                slidesPerView: 2,
-                            },
-                            // when window width is >= 768px
-                            768: {
-                                width: 768,
-                                slidesPerView: 3,
-                            },
-                            1024: {
-                                width: 1024,
-                                slidesPerView: 5,
-                            },
-                            1280: {
-                                width: 1280,
-                                slidesPerView: 6,
-                            },
-                            1440: {
-                                width: 1440,
-                                slidesPerView: 7,
-                            },
-                        }}
-                        spaceBetween={30}
-                        grabCursor={true}
-
-                        autoplay={{ delay: 10000, disableOnInteraction: false, reverseDirection: true, waitForTransition: true }}
-
-                        className='w-full h-[290px]'
-
-                    >
-                        {
-                            carosuelData?.map(data => {
-                                return (
-                                    data.Category.map(data => {
-                                        return (
-
-
-                                            <SwiperSlide key={data.id} className='w-[184px] h-[260px] rounded'>
-                                                <div className='w-full h-[230px] bg-bgColor border border-solid	border-borderColorCard '>
-                                                    {data?.img ? <img src={data?.img} alt="student" /> : null}
-                                                </div>
-                                                <div className='h-12.5 flex items-center justify-start'>
-                                                    <p className='not-italic mt-3 font-medium text-xl leading-6 text-black'>{data?.type || "type"}
-                                                        <span className='not-italic font-normal text-base leading-4 text-gray-500'>({data?.count || "0"})</span></p>
-                                                </div>
-                                            </SwiperSlide>
-                                        )
-                                    })
-
-                                )
-                            })
-                        }
-
-                    </Swiper>
-                </div>
-                <div className='w-full border border-solid border-red-900'>
-                    <Swiper
-                        slidesPerView={7}
-                        breakpoints={{
-                            // when window width is >= 640px
-                            480: {
-                                width: 480,
-                                slidesPerView: 1,
-                            },
-                            640: {
-                                width: 640,
-                                slidesPerView: 2,
-                            },
-                            // when window width is >= 768px
-                            768: {
-                                width: 768,
-                                slidesPerView: 3,
-                            },
-                            1024: {
-                                width: 1024,
-                                slidesPerView: 5,
-                            },
-                            1280: {
-                                width: 1280,
-                                slidesPerView: 6,
-                            },
-                            1440: {
-                                width: 1440,
-                                slidesPerView: 7,
-                            },
-                        }}
-                        spaceBetween={30}
-                        grabCursor={true}
-
-                        autoplay={{ delay: 8000, disableOnInteraction: false, reverseDirection: true, waitForTransition: true }}
+                <div className='w-full 	 border border-solid border-red-900	my-5'>
+                    <Carousel
+                        responsive={responsive2}
+                        //   autoPlay={this.props.deviceType !== "mobile" ? true : false}
+                        autoPlay={true}
+                        autoPlaySpeed={5000}
+                        infinite={true}
+                        className='w-[100%] flex justify-between  border border-solid border-slate-900		'
                     >
                         {
                             carosuelData?.map(data => {
                                 return (
                                     data.campany.map(data => {
                                         return (
-                                            <SwiperSlide key={data.id} className='flex flex-col'>
-                                                <div className='w-50 h-[100px] rounded-lg bg-gray-100 flex items-center justify-center select-none'>
-                                                    <p className='not-italic font-medium text-xl leading-6 text-center text-black'>{data?.type || "0"}</p>
-                                                </div>
-                                            </SwiperSlide>
+                                            <div key={data?.id} className='w-[95%] h-[100px] rounded-lg bg-gray-100 flex items-center justify-center select-none'>
+                                                <p className='not-italic font-medium text-xl leading-6 text-center text-black'>{data?.type || "0"}</p>
+
+                                            </div>
 
                                         )
                                     })
@@ -219,8 +145,12 @@ export default function MainPageSliders() {
                             })
                         }
 
-                    </Swiper>
+
+                    </Carousel>
                 </div>
+
+
+               
                 <div className='w-full flex justify-between items-center h-fit py-7'>
                     <div >
                         <p className='flex items-center cursor-pointer select-none' onClick={() => setClothesToggle(!clothesToggle)}>
